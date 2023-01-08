@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.5.
 
-Part 1 :Angular + .Net Core=======DONE====================================================================================
+=DONE============>  Part 1 :Angular + .Net Core
  complete authentication and authorization in angular 14 + .net 6 project Login and Signup page design in Html, CSS, and bootstrap.
 
 1.Login and Signup page design in Html, CSS, and bootstrap.
