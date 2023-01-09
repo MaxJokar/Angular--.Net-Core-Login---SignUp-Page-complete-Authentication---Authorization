@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import ValidateForm from 'src/app/helpers/validateform';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -14,12 +15,12 @@ export class SignupComponent {
   isText:boolean = false ;
   eyeIcon: string = "fa-eye-slash";
   signUpForm!: FormGroup;
-  router: any;
 
 
 
 
-  constructor(private fb:FormBuilder, private auth: AuthService) {}
+  // injec AuthService to do API call
+  constructor(private fb:FormBuilder, private auth: AuthService, private router: Router) {}
 
   ngOnInit(): void{
     this.signUpForm = this.fb.group({
@@ -41,17 +42,20 @@ export class SignupComponent {
 
   onSignup() {
     if(this.signUpForm.valid) {
-      //perform logic for signup
+      // Call the method ,send object signUpForm
       this.auth.signUp(this.signUpForm.value)
       .subscribe({
         next:(res=>{
+          // if its success it gives alert then reset the form
           alert(res.message);
           this.signUpForm.reset();
-          //this.router.navigate(['login']);
+          // if the sign up is success we can login & show on Dashboard Component
+          // we are sending to the login page
+          this.router.navigate(['login']);
         })
         ,error:(err=>{
           alert(err?.error.message)
-        }) // check
+        })
       })
 
       console.log(this.signUpForm.value)

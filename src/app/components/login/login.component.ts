@@ -25,7 +25,7 @@ export class LoginComponent {
     this.loginForm = this.fb.group({
       username: ['',Validators.required],
       password: ['',Validators.required]
-    })
+     })
   }
 
   hideShowPass(){
@@ -44,8 +44,9 @@ export class LoginComponent {
       .subscribe({
         next:(res)=>{
           alert(res.message);
-          // after adding dashboard
+          // after adding dashboard:if the login is success we
           this.loginForm.reset();
+          // reset the form & send the User to dashboard page
           this.router.navigate(['dashboard'])
         },
         error:(err=>{
