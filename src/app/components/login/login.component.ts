@@ -42,14 +42,14 @@ export class LoginComponent {
       //send the obj to database
       this.auth.login(this.loginForm.value)
       .subscribe({
-        next:(res)=>{
+        next:(res=>{
           alert(res.message);
           // after adding dashboard:if the login is success we
           this.loginForm.reset();
           // reset the form & send the User to dashboard page
           this.router.navigate(['dashboard'])
-        },
-        error:(err=>{
+        })
+        ,error:(err=>{
           alert(err?.error.message)
         })
       })

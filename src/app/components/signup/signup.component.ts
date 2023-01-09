@@ -57,8 +57,8 @@ export class SignupComponent {
           alert(err?.error.message)
         })
       })
-
-      console.log(this.signUpForm.value)
+      //After we signed up twice ,got error , was ok but this line not necessary
+      //console.log(this.signUpForm.value)
     }else{
       ValidateForm.ValidateAllFormFields(this.signUpForm)
       //logic for throwing error
