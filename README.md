@@ -2,26 +2,30 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.5.
 
-## Development server
+=DONE============>  Part 1 :Angular + .Net Core
+ complete authentication and authorization in angular 14 + .net 6 project Login and Signup page design in Html, CSS, and bootstrap.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1.Login and Signup page design in Html, CSS, and bootstrap.
+2. Authentication & Authorization :  angular Form Validation using the Reactive form.
+3.Angular Project: the creation of login and signup API in .Net6.(By  vscode 2022 , version 1.74-Project name:AngularAuthAPI ) and for our project (using vscode 2019,1.31) We will also Integrate the API with Angular and will also  fix CORS error.
+4. Check exisiting Email :secure the password using Hashing mechanism.
+5. Angular toast messages implementation  :log in with the hashed password and also will add a toast message popup for all ou alerts
+6. Role based Authentication :create a JWT Token in .NET 6 with Roles and Name as a payload identity
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Create Angular Project (Login Page & SignUp page UI)
+Angular form Validation
+Create  API or Login & Sighn Up 
+Integrate the API for Login and Sign Up 
+Create FastAPI ,
+make API controller
+Create a Model , connect to Microsoft SQL 
+Connect FastAPI to Db
+test with swagger API 
+Part 2============To Be Continued ....=====================
+Password Hashing in .Net
+Create Username , Email and Password validation in backend 
+Create JWT token in API 
+Use Token in UI  and send in the Http eaders
+Implement Guards in Angular 
+Create Role Based Login 
+Create a Dummy Dashboard using Html template 
