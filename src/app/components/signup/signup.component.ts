@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import ValidateForm from 'src/app/helpers/validateform';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class SignupComponent {
   isText:boolean = false ;
   eyeIcon: string = "fa-eye-slash";
   signUpForm!: FormGroup;
+  router: any;
 
 
 
@@ -23,14 +25,12 @@ export class SignupComponent {
     this.signUpForm = this.fb.group({
       firstName: ['',Validators.required],
       lastName: ['',Validators.required],
-      usertName: ['',Validators.required],
+      userName: ['',Validators.required],
       email: ['',Validators.required],
       password: ['',Validators.required],
     })
 
   }
-
-
 
   hideShowPass(){
     this.isText = !this.isText ; // to change eye mode from visible to unvisible
@@ -45,32 +45,25 @@ export class SignupComponent {
       this.auth.signUp(this.signUpForm.value)
       .subscribe({
         next:(res=>{
-          alert(res.message)
+          alert(res.message);
+          this.signUpForm.reset();
+          //this.router.navigate(['login']);
         })
         ,error:(err=>{
           alert(err?.error.message)
-        })
+        }) // check
       })
 
       console.log(this.signUpForm.value)
     }else{
-      this.validateAllFormFileds(this.signUpForm)
+      ValidateForm.ValidateAllFormFields(this.signUpForm)
       //logic for throwing error
     }
   }
-  private validateAllFormFileds(formGroup: FormGroup){
-    Object.keys(formGroup.controls).forEach(field => {
-      const control = formGroup.get(field);
-      if(control instanceof FormControl) {
-        control.markAsDirty( {onlySelf: true });
-      } else if(control instanceof FormGroup) {
-        this.validateAllFormFileds(control)
-      }
-
-    })
-
-  }
-
-
 
 }
+
+
+
+
+

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder , FormControl, FormGroup , Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+import ValidateForm from 'src/app/helpers/validateform';
 import { AuthService } from 'src/app/services/auth.service';
 //import { AuthService } from './../../services/auth.service';
 
@@ -16,7 +18,7 @@ export class LoginComponent {
   eyeIcon: string = "fa-eye-slash";
   loginForm! : FormGroup; //3
   //2 indect FormBuilder ,AuthService
-  constructor(private fb:FormBuilder , private auth:AuthService) {}
+  constructor(private fb:FormBuilder , private auth:AuthService, private router: Router) {}
 
   //4 initialization
   ngOnInit(): void{
@@ -41,34 +43,25 @@ export class LoginComponent {
       this.auth.login(this.loginForm.value)
       .subscribe({
         next:(res)=>{
-          alert(res.message)
+          alert(res.message);
+          // after adding dashboard
+          this.loginForm.reset();
+          this.router.navigate(['dashboard'])
         },
-        error:(err)=>{
+        error:(err=>{
           alert(err?.error.message)
-        }
+        })
       })
 
 
     }else {
         console.log("Form is valid ");
         //throw the error using toaster and with required fields
-        this.validateAllFormFileds(this.loginForm);
+        ValidateForm.ValidateAllFormFields(this.loginForm);
         alert("Your Form is Invalid")
     }
   }
 
-  private validateAllFormFileds(formGroup: FormGroup){
-    Object.keys(formGroup.controls).forEach(field => {
-      const control = formGroup.get(field);
-      if(control instanceof FormControl) {
-        control.markAsDirty( {onlySelf:true });
-      } else if(control instanceof FormGroup) {
-        this.validateAllFormFileds(control)
-      }
-
-    })
-
-  }
 
 
 }

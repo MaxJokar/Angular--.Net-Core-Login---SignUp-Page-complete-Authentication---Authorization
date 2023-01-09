@@ -39,9 +39,9 @@
 
 
                         <div class="form-group pt-3">
-                            <div class="input-field" [class.error]="signUpForm.controls['username'].dirty && signUpForm.hasError('required','username')" >
+                            <div class="input-field" [class.error]="signUpForm.controls['userName'].dirty && signUpForm.hasError('required','userName')" >
                                 <span class="fa fa-user p-2"></span>
-                                <input formControlName= "userName" type="text" placeholder="Username">
+                                <input formControlName= "userName" type="text" placeholder="userName">
                             </div>
                         </div>
                         <small *ngIf="signUpForm.controls['userName'].dirty && signUpForm.hasError('required','userName')" class="text-danger">*UserName is required </small>
