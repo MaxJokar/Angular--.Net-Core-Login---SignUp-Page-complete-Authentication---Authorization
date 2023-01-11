@@ -23,7 +23,7 @@ export class LoginComponent {
   //4 initialization
   ngOnInit(): void{
     this.loginForm = this.fb.group({
-      username: ['',Validators.required],
+      userName: ['',Validators.required],
       password: ['',Validators.required]
      })
   }
@@ -59,7 +59,7 @@ export class LoginComponent {
         console.log("Form is valid ");
         //throw the error using toaster and with required fields
         ValidateForm.ValidateAllFormFields(this.loginForm);
-        alert("Your Form is Invalid")
+        alert("Your Login Form is Invalid")
     }
   }
 

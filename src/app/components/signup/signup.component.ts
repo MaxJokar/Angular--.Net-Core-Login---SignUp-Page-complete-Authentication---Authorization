@@ -19,7 +19,7 @@ export class SignupComponent {
 
 
 
-  // injec AuthService to do API call
+  // inject AuthService to do API call
   constructor(private fb:FormBuilder, private auth: AuthService, private router: Router) {}
 
   ngOnInit(): void{
@@ -32,9 +32,9 @@ export class SignupComponent {
     })
 
   }
-
+  //To convert from one to another status
   hideShowPass(){
-    this.isText = !this.isText ; // to change eye mode from visible to unvisible
+    this.isText = !this.isText ;
     this.isText ? this.eyeIcon = "fa-eye" : this.eyeIcon = "fa-eye-slash" ;
     this.isText ? this.type = "text" : this.type = "password" ;
 
@@ -57,11 +57,12 @@ export class SignupComponent {
           alert(err?.error.message)
         })
       })
-      //After we signed up twice ,got error , was ok but this line not necessary
-      //console.log(this.signUpForm.value)
+      //After we signed up twice ,got error , was ok but the following  line is  not necessary
+      console.log(this.signUpForm.value)
     }else{
       ValidateForm.ValidateAllFormFields(this.signUpForm)
       //logic for throwing error
+      alert("Your Login Form is Invalid")
     }
   }
 

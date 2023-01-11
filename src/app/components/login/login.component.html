@@ -10,12 +10,12 @@
                     <div class="panel-body p-3">
                     <form [formGroup]="loginForm">
                         <div class="form-group pt-3">
-                            <div class="input-field" [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required','username')">
+                            <div class="input-field" [class.error]="loginForm.controls['userName'].dirty && loginForm.hasError('required','userName')">
                                 <span class="fa fa-user p-2"></span>
-                                <input formControlName="username" type="text" placeholder="Username">
+                                <input formControlName="userName" type="text" placeholder="userName">
                             </div>
                         </div>
-                        <small *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')" class="text-danger">*Username is  required </small>
+                        <small *ngIf="loginForm.controls['userName'].dirty && loginForm.hasError('required','userName')" class="text-danger">*Username is  required </small>
 
 
                         <div class="form-group pt-3">

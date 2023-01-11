@@ -20,7 +20,7 @@ export class AuthService {
 
 
   login(loginObj: any){
-    return this.http.post<any>(`${this.baseUrl}authenticate`,loginObj);
+    return this.http.post<any>(`${this.baseUrl}authenticate`,loginObj);//check username & email
   }
 
 }

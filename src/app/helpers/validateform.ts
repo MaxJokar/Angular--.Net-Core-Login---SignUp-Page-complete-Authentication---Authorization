@@ -4,6 +4,7 @@ export default class ValidateForm {
     static ValidateAllFormFields(formGroup: FormGroup){
           Object.keys(formGroup.controls).forEach(field => {
             const control = formGroup.get(field);
+            console.log('this is from herlper validator ')
             if(control instanceof FormControl) {
               control.markAsDirty( {onlySelf: true });
             } else if(control instanceof FormGroup) {
