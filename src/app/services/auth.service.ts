@@ -13,14 +13,14 @@ export class AuthService {
   constructor(private http : HttpClient) { } // To do API calling
 
 
-  // Following methods were able to pass objects to the back
+  // Following methods were able to pass objects to the back:to APi then to .NET
   signUp(userObj:any){
-    return this.http.post<any>(`${this.baseUrl}register`,userObj);
+    return this.http.post<any>(`${this.baseUrl}register`,userObj);//register Endpoint
   }
 
 
   login(loginObj: any){
-    return this.http.post<any>(`${this.baseUrl}authenticate`,loginObj);//check username & email
+    return this.http.post<any>(`${this.baseUrl}authenticate`,loginObj);//authenticate Endpoint
   }
 
 }

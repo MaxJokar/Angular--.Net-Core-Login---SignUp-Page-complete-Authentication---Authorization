@@ -1,0 +1,21 @@
+<section>
+    <div class="container">
+        <h1 class="mb-8">Gallery</h1>
+        <div class="row">
+            <div class="col-12">
+                <div *ngFor="let photo of photos " class="post p-3 mb-3">
+                    <div class="row">
+                        <div class="col-auto">
+                            <img class="item" [src]="photo.download_url"/>
+                        </div>
+                        <div class="col-8">
+                            <h2> #{{ photo.id }} - {{ photo.author }}</h2>
+                        </div>
+                    </div>
+
+            </div>
+            <div class="lazy-loading-detector "></div>
+        </div>
+        </div>
+    </div>
+</section>

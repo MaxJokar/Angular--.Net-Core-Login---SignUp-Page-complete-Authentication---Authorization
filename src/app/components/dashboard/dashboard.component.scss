@@ -1,0 +1,37 @@
+
+.home .hk-header {
+    margin-top: 0;
+    padding-top: 90px;
+}
+.hk-header {
+    height: auto;
+    padding-top: 100px;
+    padding-bottom: 48px;
+    margin-top: 80px;
+    background-position: center;
+    background-color: #E7BB3D;
+}
+.hk-header {
+    display: flex;
+    align-items: center;
+    min-height: 400px;
+    height: 80vh;
+    max-height: 800px;
+    margin-top: 96px;
+    padding-bottom: 80px;
+    padding-top: 16px;
+    background: #ffd14e url(/assets/38c1876…/header-armin-low.jpg) no-repeat center;
+    background-size: cover;
+    font-family: CircularXXWeb-Regular,sans-serif;
+}
+.hk-founders {
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+}
+
+.hk-person-portrait {
+    border-radius: 100%;
+    margin-bottom: 1rem;
+    width: 242px;
+    max-width: 90%;
+}
