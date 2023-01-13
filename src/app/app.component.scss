@@ -1,13 +1,13 @@
-.text-center{
-    text-align: center;
-}
 
 
+.htitle {
 
-.h1, h1 {
+    color:blue;
+    height: 50px;
     font-size: 4rem;
 }
 
-*, ::after, ::before {
-    box-sizing: border-box;
+.hpadding {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }

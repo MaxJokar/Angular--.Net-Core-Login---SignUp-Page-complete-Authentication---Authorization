@@ -13,7 +13,7 @@ import { GalleryService } from 'src/app/services/gallery.service';
 
 export class GalleryComponent implements OnInit {
 
-  exactPhotoInPage = 5;
+  exactPhotoInPage = 10;
   currentPage: number = 1;
   //photos?: Observable<PhotoInterface[]>; with async in html
   photos: PhotoInterface[] =[]

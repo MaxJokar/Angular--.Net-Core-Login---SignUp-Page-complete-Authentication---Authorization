@@ -3,7 +3,7 @@ export interface PhotoInterface {
     author: string ;
     width: number;
     height: number ;
-    url: string
+    url: string;
     download_url: string
 
     }
