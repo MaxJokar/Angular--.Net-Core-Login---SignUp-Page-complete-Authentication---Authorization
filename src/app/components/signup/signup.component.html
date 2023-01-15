@@ -5,6 +5,11 @@
                 <div class="panel border bg-white">
                     <div class="pannel-heading">
                         <h3 class="pt-3 font-weight-bold">Sign up</h3>
+                        <h1 [hidden]="firstName === '' " >Welcome {{ firstName }} </h1>
+                        <h1 [hidden]="firstName !== '' " >Dear customer </h1>
+
+
+
                     </div>
                 <div class="panel-body p-3">
                     <form [formGroup]="signUpForm">
@@ -12,7 +17,8 @@
                         <div class="form-group pt-3">
                             <div class="input-field" [class.error]="signUpForm.controls['firstName'].dirty && signUpForm.hasError('required','firstName')">
                                 <span class="fa fa-user p-2"></span>
-                                <input formControlName= "firstName" type="text" placeholder="FirstName">
+                                <input formControlName= "firstName" type="text" placeholder="FirstName" (input) = "onfirstNameInputChanged($event)">
+
                             </div>
                         </div>
                         <small *ngIf="signUpForm.controls['firstName'].dirty && signUpForm.hasError('required','firstName')" class="text-danger">FirstName is required </small>

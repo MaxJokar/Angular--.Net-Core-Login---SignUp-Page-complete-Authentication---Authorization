@@ -18,6 +18,19 @@ export class LoginComponent {
   eyeIcon: string = "fa-eye-slash";
   loginForm! : FormGroup; //3
   //2 indect FormBuilder ,AuthService
+
+  // firstName: string = ' ';
+  // lastName: string = '' ;
+
+
+
+  // public onUsernameInputChanged(e:Event) {
+  //   this.firstName = (<HTMLInputElement>e.target ).value;
+  //   this.lastName = (<HTMLInputElement>e.target ).value;
+  // }
+
+
+
   constructor(private fb:FormBuilder , private auth:AuthService, private router: Router) {}
 
   //4 initialization
