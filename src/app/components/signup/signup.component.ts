@@ -16,7 +16,7 @@ export class SignupComponent {
   eyeIcon: string = "fa-eye-slash";
   signUpForm!: FormGroup;
   firstName:string='';
-  lastName: string = '' ;
+
 
 
 
