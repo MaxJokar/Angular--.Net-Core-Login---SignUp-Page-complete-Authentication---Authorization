@@ -19,7 +19,7 @@ export class SignupComponent {
 
 
 
-
+fileStatus = { status: '', percentage:0 } ;
 
   // inject AuthService to do API call
   constructor(private fb:FormBuilder, private auth: AuthService, private router: Router) {}
@@ -62,9 +62,11 @@ export class SignupComponent {
           alert(res.message);
 
           this.signUpForm.reset();
+          this.fileStatus.percentage = res.loaded / res.type;
           // if the sign up is success we can login & show on Dashboard Component
           // we are sending to the login page
           this.router.navigate(['login']);
+
         })
 
         ,error:(err=>{
