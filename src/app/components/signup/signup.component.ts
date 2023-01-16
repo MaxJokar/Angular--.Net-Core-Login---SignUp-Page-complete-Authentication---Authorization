@@ -62,9 +62,15 @@ fileStatus = { status: '', percentage:0 } ;
           alert(res.message);
 
           this.signUpForm.reset();
-          this.fileStatus.percentage = res.loaded / res.type;
+          this.fileStatus.percentage = Math.round(100*res.loaded / res.type);
+          this.fileStatus.status = 'progress';
+          console.log(this.fileStatus);
           // if the sign up is success we can login & show on Dashboard Component
           // we are sending to the login page
+          if(res.status === 200) {
+            this.fileStatus.percentage = 0 ;
+            this.fileStatus.status = 'done' ;
+          }
           this.router.navigate(['login']);
 
         })
